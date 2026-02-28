@@ -10,9 +10,9 @@ load_dotenv()
 # ── Core bot config ────────────────────────────────────────────────────────────
 API_ID = int(getenv("API_ID", 27798659))
 API_HASH = getenv("API_HASH", "26100c77cee02e5e34b2bbee58440f86")
-BOT_TOKEN = getenv("BOT_TOKEN")
+BOT_TOKEN = getenv("BOT_TOKEN", "8717575438:AAEr4X8_6rLsCLcFpDehlZnMgCdAwc4z8Ow")
 
-OWNER_ID = int(getenv("OWNER_ID", 7044783841))
+OWNER_ID = int(getenv("OWNER_ID", 6926121093))
 OWNER_USERNAME = getenv("OWNER_USERNAME", "idoodstream")
 BOT_USERNAME = getenv("BOT_USERNAME", "idoodstreamXRobot")
 BOT_NAME = getenv("BOT_NAME", "˹ɪᴅᴏᴏᴅsᴛʀᴇᴀᴍ ✘ 𝙼ᴜsɪᴄ˼ ♪")
@@ -20,7 +20,7 @@ ASSUSERNAME = getenv("ASSUSERNAME", "musicxidoodstream")
 
 # ── Database & logging ─────────────────────────────────────────────────────────
 MONGO_DB_URI = getenv("MONGO_DB_URI")
-LOGGER_ID = int(getenv("LOGGER_ID", -1002014167331))
+LOGGER_ID = int(getenv("LOGGER_ID", -1003834146810))
 
 # ── Limits (durations in min/sec; sizes in bytes) ──────────────────────────────
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 300))
