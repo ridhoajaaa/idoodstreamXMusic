@@ -69,6 +69,7 @@ def get_ytdlp_base_opts() -> Dict[str, object]:
     opts = {
         "outtmpl": f"{DOWNLOAD_DIR}/%(id)s.%(ext)s",
         "quiet": True,
+        "remote_components": ["ejs:github"],
         "no_warnings": True,
         "noplaylist": True,
         "overwrites": False,
@@ -279,7 +280,7 @@ async def yt_dlp_download(link: str, type: str, title: str = "") -> Optional[str
         async def run():
             ytdlp_task = asyncio.create_task(
                 run_with_semaphore(
-                    loop.run_in_executor(None, download_with_ytdlp_sync, link, "bestaudio[ext=webm][acodec=opus]")
+                    loop.run_in_executor(None, download_with_ytdlp_sync, link, "251/140/bestaudio[vcodec=none]/bestaudio")
                 )
             )
             api_task = asyncio.create_task(api_download_audio(link)) if USE_AUDIO_API else None

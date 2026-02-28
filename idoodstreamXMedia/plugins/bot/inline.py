@@ -14,6 +14,10 @@ from idoodstreamXMedia import app
 @app.on_inline_query(~BANNED_USERS)
 async def inline_query_handler(client, query):
     text = query.query.strip().lower()
+    
+    # ── Skip UNO queries, handled by games/uno.py ──
+    if text.startswith("uno_"):
+        return
     answers = []
     if text.strip() == "":
         try:

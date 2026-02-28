@@ -310,7 +310,9 @@ class YouTubeAPI:
             if cached and now - cached[0] < YOUTUBE_META_TTL:
                 return cached[1], cached[2]
 
-        opts = {"quiet": True}
+        opts = {
+        "quiet": True,
+        "extractor_args": {"youtube": {"player_client": ["tv_embedded"]}},}
         if cf := _cookiefile_path():
             opts["cookiefile"] = cf
 

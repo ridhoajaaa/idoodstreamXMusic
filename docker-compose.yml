@@ -1,0 +1,22 @@
+services:
+  mongo:
+    image: mongo:6
+    container_name: mongo
+    restart: unless-stopped
+    volumes:
+      - mongodb_idoodstreamxmusic:/data/db
+
+  idoodstreamxmusic:
+    build: .
+    container_name: idoodstreamxmusic
+    env_file:
+      - .env
+    depends_on:
+      - mongo
+    restart: unless-stopped
+    volumes:
+      - .:/app
+
+volumes:
+  mongodb_idoodstreamxmusic:
+    name: mongodb_idoodstreamxmusic

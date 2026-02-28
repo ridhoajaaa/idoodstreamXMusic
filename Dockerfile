@@ -12,4 +12,6 @@ RUN pip install --no-cache-dir -U pip && \
     pip install --no-cache-dir -r requirements.txt
 
 COPY . .
+COPY patch_pyrogram.py .
+RUN python3 patch_pyrogram.py
 CMD ["python3", "-m", "idoodstreamXMedia"]
